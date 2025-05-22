@@ -9,12 +9,22 @@ keep = Dialog.getCheckbox;
 str_1 = "1";
 str_all = "";
 
-for (k=1;k<=(n-1)/2;k+=1){
+for (k=1;k<=Math.ceil((n-1)/2);k+=1){
 	str_1 = "0" + str_1 + "0";
 }
+
 for (k=1;k<=n;k+=1){
-	str_all = str_all + str_1 + '\n';
+	str_all = str_all + str_1 + "\n";
 }
+
+// add row if even window desired
+if (!(n%2)){
+	for (k=1;k<=n+1;k+=1){
+	str_all = str_all + "0";
+	}
+	str_all = str_all + "\n";
+}
+print(str_all);
 
 
 // get original image
@@ -39,6 +49,6 @@ close;
 
 
 // need to upgrade: 
-// currently assuming odd factor, add functionality for even window size
+// probably need scaling factor to account for mask zeros
 // should original voxel size and reset later
 // rename output image (RA_[original name])
