@@ -30,6 +30,9 @@ print(str_all);
 // get original image
 id1 = getImageID;
 // set voxels in case scaling affects convolution
+selectImage(id1);
+getVoxelSize(orig_w, orig_h, orig_d, orig_unit);
+print(orig_w +  "\n" + orig_h +  "\n" + orig_d + "\n" +  orig_unit);
 setVoxelSize(1, 1, 1, "pixel");
 // reslice to perform convolution in z (t) axis
 run("Reslice [/]...", "input=1 output=1 start=Top");
@@ -44,6 +47,13 @@ run("Convolve...", "text1=["+str_all+"] normalize stack");
 
 // reslice back to original orientation
 run("Reslice [/]...", "input=1 output=1 start=Top");
+
+// reset units in original and final images
+setVoxelSize(orig_w, orig_h, orig_d, orig_unit);
+selectImage(id1);
+setVoxelSize(orig_w, orig_h, orig_d, orig_unit);
+
+// close resliced form
 selectImage(id2);
 close;
 
@@ -52,3 +62,4 @@ close;
 // probably need scaling factor to account for mask zeros
 // should original voxel size and reset later
 // rename output image (RA_[original name])
+// check if stack is large enough
