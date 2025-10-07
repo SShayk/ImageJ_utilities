@@ -59,7 +59,6 @@ close;
 
 
 // need to upgrade: 
-// probably need scaling factor to account for mask zeros
-// should original voxel size and reset later
+// need scaling factor for even windows
 // rename output image (RA_[original name])
 // check if stack is large enough
