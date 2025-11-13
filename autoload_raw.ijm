@@ -38,7 +38,7 @@ if (File.exists(txtpath)){
 	
 	
 	// assuming black = 0, little-endian byte order, open 1 file, and don't use virtual stack
-	run("Raw...", "open=" + fs + " image=["+var_type+"] width="+var_width+" height="+var_height+" number="+var_nfiles+" gap="+var_gap+" little-endian");
+	run("Raw...", "open= [" + fs + "] image=["+var_type+"] width="+var_width+" height="+var_height+" number="+var_nfiles+" gap="+var_gap+" little-endian");
 		
 	
 }else{
