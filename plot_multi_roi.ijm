@@ -29,8 +29,8 @@ for(i=0; i<n; i++){
 		thisPlot = getTitle();
 		selectWindow(basePlot);
 		Plot.addFromPlot(thisPlot, 0);
-		styleString = colors[k] + "," + colors[k] + ",1.0,Connected Circles";		
-		Plot.setStyle(i+1, styleString);		
+		styleString = colors[k] + "," + colors[k] + ",1.0,Line";		
+		Plot.setStyle(i, styleString);		
 		if(k==11)
 			k=0;
 		else 
